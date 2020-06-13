@@ -38,7 +38,9 @@ class TrackWaterViewController: UIViewController {
     }
     
     @objc private func goalButtonPressed() {
-        viewModel.addGoal()
+        showPromptForGoalSetting { [weak self] goal in
+            self?.viewModel.addGoal(goal)
+        }
     }
     
     @objc private func addWaterButtonPressed() {
@@ -82,6 +84,33 @@ class TrackWaterViewController: UIViewController {
         
     }
     
+    private func showPromptForGoalSetting(submitAction:@escaping (Int)->()) {
+        let alertController = UIAlertController.alertForGoalSetting(submitAction: submitAction)
+        present(alertController, animated: true)
+    }
+}
 
+extension UIAlertController {
+    fileprivate static func alertForGoalSetting(submitAction:@escaping (Int)->()) -> UIAlertController {
+        let alertController = UIAlertController(title: "Enter answer", message: nil, preferredStyle: .alert)
+        alertController.addTextField { textField in
+            textField.placeholder = "Put some number"
+            textField.keyboardType = .numberPad
+        }
+        
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned alertController] _ in
+            let answer = alertController.textFields![0]
+            let goal = Int(answer.text ?? "") ?? 0
+            
+            submitAction(goal)
+        }
+        
+        alertController.addAction(submitAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        return alertController
+    }
 }
 

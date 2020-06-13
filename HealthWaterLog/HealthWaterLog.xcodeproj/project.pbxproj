@@ -18,6 +18,7 @@
 		7021209E2494C4C500F7C7C3 /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7021209A2494C4C500F7C7C3 /* AppTabBarController.swift */; };
 		7021209F2494C4C500F7C7C3 /* TrackWaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7021209B2494C4C500F7C7C3 /* TrackWaterViewController.swift */; };
 		702120A02494C4C500F7C7C3 /* VisualizeWaterIntakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7021209C2494C4C500F7C7C3 /* VisualizeWaterIntakeViewController.swift */; };
+		702120A22494C60B00F7C7C3 /* UserPreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702120A12494C60B00F7C7C3 /* UserPreferenceManager.swift */; };
 		B31AA19324734495007708F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31AA19224734495007708F4 /* AppDelegate.swift */; };
 		B31AA19524734495007708F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31AA19424734495007708F4 /* SceneDelegate.swift */; };
 		B31AA1A124734497007708F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B31AA1A024734497007708F4 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		7021209A2494C4C500F7C7C3 /* AppTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
 		7021209B2494C4C500F7C7C3 /* TrackWaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackWaterViewController.swift; sourceTree = "<group>"; };
 		7021209C2494C4C500F7C7C3 /* VisualizeWaterIntakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualizeWaterIntakeViewController.swift; sourceTree = "<group>"; };
+		702120A12494C60B00F7C7C3 /* UserPreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferenceManager.swift; sourceTree = "<group>"; };
 		B31AA18F24734495007708F4 /* HealthWaterLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthWaterLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31AA19224734495007708F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B31AA19424734495007708F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				7021208B2494C3F400F7C7C3 /* HealthWaterLogDataController.swift */,
 				7021208C2494C3F400F7C7C3 /* Intake+CoreDataClass.swift */,
 				7021208D2494C3F400F7C7C3 /* Intake+CoreDataProperties.swift */,
+				702120A12494C60B00F7C7C3 /* UserPreferenceManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				702120952494C40100F7C7C3 /* DateUtils.swift in Sources */,
 				7021208E2494C3F400F7C7C3 /* CoreDataManager.swift in Sources */,
+				702120A22494C60B00F7C7C3 /* UserPreferenceManager.swift in Sources */,
 				7021208F2494C3F400F7C7C3 /* HealthWaterLog.xcdatamodeld in Sources */,
 				7021209E2494C4C500F7C7C3 /* AppTabBarController.swift in Sources */,
 				7021209F2494C4C500F7C7C3 /* TrackWaterViewController.swift in Sources */,

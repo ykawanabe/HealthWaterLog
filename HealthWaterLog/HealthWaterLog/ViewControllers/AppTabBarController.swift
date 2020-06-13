@@ -20,7 +20,7 @@ class AppTabBarController: UITabBarController {
     }
     
     func configureViewControllers() {
-        let trackWaterViewModel = TrackWaterViewModel(dataStore: coreDataManager.healthWaterLogDataController)
+        let trackWaterViewModel = TrackWaterViewModel(dataStore: coreDataManager.healthWaterLogDataController, userPreferenceManager: UserPreferenceManager())
         
         let trackWaterViewController = TrackWaterViewController(viewModel:trackWaterViewModel)
                 
