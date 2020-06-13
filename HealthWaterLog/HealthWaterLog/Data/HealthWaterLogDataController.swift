@@ -174,3 +174,15 @@ extension HealthWaterLogDataController {
         return intakePerDays
     }
 }
+
+extension HealthWaterLogDataController {
+    func saveMultipleRandomIntakesWithinAWeek() {
+        for _ in 0...50 {
+            let randomInt = Int.random(in: 0...8)
+            let day = Calendar.current.date(byAdding: DateComponents(day: -(randomInt)), to: Date())!
+           let _ = createIntake(amount: 8, date: day)
+        }
+        
+        saveContext()
+    }
+}

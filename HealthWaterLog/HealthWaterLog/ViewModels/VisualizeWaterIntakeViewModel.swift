@@ -26,6 +26,9 @@ class VisualizeWaterIntakeViewModel: NSObject, HealthWaterLogDataControllerListe
         dataStore.addListener(self)
         userPreferenceManager.addListener(self)
         
+        // Comment out to test out hitory feature
+//        dataStore.saveMultipleRandomIntakesWithinAWeek()
+        
         updateCurrentState()
     }
     
