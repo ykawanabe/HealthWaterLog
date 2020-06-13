@@ -162,4 +162,15 @@ extension HealthWaterLogDataController {
             fatalError("Failed to fetch: \(error)")
         }
     }
+    
+    func getIntakePerDayForPastDays(_ days: Int) -> [IntakePerDay] {
+        if days < 1 {
+            return []
+        }
+        
+        let range = 1...days
+        let dates = range.map {Calendar.current.date(byAdding: DateComponents(day: -($0)), to: Date())!}
+        let intakePerDays = dates.map { getIntakePerDay(forDay: $0) }
+        return intakePerDays
+    }
 }

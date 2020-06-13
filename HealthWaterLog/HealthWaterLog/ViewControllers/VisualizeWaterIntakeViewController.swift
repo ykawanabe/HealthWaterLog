@@ -9,6 +9,7 @@ import UIKit
 class VisualizeWaterIntakeViewController: UIViewController {
 
     private let label = UILabel()
+    private let stackView = UIStackView()
     
     private var viewModel: VisualizeWaterIntakeViewModel!
     
@@ -39,8 +40,25 @@ class VisualizeWaterIntakeViewController: UIViewController {
     private func setUpLayout() {
         label.textAlignment = .center
         
+        setUpStackView()
         setUpColor()
         setUpConstraints()
+    }
+
+    private func setUpStackView() {
+        stackView.axis = .vertical
+        stackView.alignment = .top
+        stackView.distribution = .equalSpacing
+        
+        let label = UILabel()
+        label.text = "History: "
+        stackView.addArrangedSubview(label)
+        
+        for text in viewModel.historyStrings {
+            let label = UILabel()
+            label.text = text
+            stackView.addArrangedSubview(label)
+        }
     }
     
     private func setUpColor() {
@@ -51,12 +69,21 @@ class VisualizeWaterIntakeViewController: UIViewController {
     private func setUpConstraints() {
         label.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(label)
-        
+        label.setContentHuggingPriority(.defaultHigh, for: .vertical)
+
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            label.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            label.topAnchor.constraint(equalTo: view.topAnchor),
-            label.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16.0),
+        ])
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(stackView)
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 16.0),
         ])
     }
 }

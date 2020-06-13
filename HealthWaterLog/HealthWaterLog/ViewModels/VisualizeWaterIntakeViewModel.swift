@@ -9,15 +9,18 @@
 import UIKit
 
 class VisualizeWaterIntakeViewModel: NSObject, HealthWaterLogDataControllerListener,UserPreferenceManagerListener {
+    private let historyDays = 7
     
     private let dataStore: HealthWaterLogDataController
     private let userPreferenceManager: UserPreferenceManager
     
     let currentState = Dynamic<String>("")
+    let historyStrings: [String]
     
     init(dataStore: HealthWaterLogDataController, userPreferenceManager: UserPreferenceManager) {
         self.dataStore = dataStore
         self.userPreferenceManager = userPreferenceManager
+        self.historyStrings = dataStore.getIntakePerDayForPastDays(historyDays).map{"\($0.day!): \($0.amount) oz" }
         super.init()
         
         dataStore.addListener(self)

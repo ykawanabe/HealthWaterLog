@@ -25,6 +25,6 @@ extension Date {
 extension Date {
     var string: String {
         let components = Calendar.current.dateComponents([.year, .month, .day], from: self)
-        return "\(components.year!) - \(components.month!)-\(components.day!)"
+        return "\(components.year!)-\(components.month!)-\(components.day!)"
     }
 }
