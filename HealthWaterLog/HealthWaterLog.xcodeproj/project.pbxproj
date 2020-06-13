@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		700BB688249553FC009EFFD3 /* VisualizeWaterIntakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700BB687249553FC009EFFD3 /* VisualizeWaterIntakeViewModel.swift */; };
+		700BB68A249562D7009EFFD3 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700BB689249562D7009EFFD3 /* Dynamic.swift */; };
 		7021208E2494C3F400F7C7C3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702120882494C3F400F7C7C3 /* CoreDataManager.swift */; };
 		7021208F2494C3F400F7C7C3 /* HealthWaterLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 702120892494C3F400F7C7C3 /* HealthWaterLog.xcdatamodeld */; };
 		702120902494C3F400F7C7C3 /* HealthWaterLogDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7021208B2494C3F400F7C7C3 /* HealthWaterLogDataController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		700BB687249553FC009EFFD3 /* VisualizeWaterIntakeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeWaterIntakeViewModel.swift; sourceTree = "<group>"; };
+		700BB689249562D7009EFFD3 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		702120882494C3F400F7C7C3 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7021208A2494C3F400F7C7C3 /* HealthWaterLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HealthWaterLog.xcdatamodel; sourceTree = "<group>"; };
 		7021208B2494C3F400F7C7C3 /* HealthWaterLogDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthWaterLogDataController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				702120942494C40100F7C7C3 /* DateUtils.swift */,
+				700BB689249562D7009EFFD3 /* Dynamic.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				7021208F2494C3F400F7C7C3 /* HealthWaterLog.xcdatamodeld in Sources */,
 				7021209E2494C4C500F7C7C3 /* AppTabBarController.swift in Sources */,
 				7021209F2494C4C500F7C7C3 /* TrackWaterViewController.swift in Sources */,
+				700BB68A249562D7009EFFD3 /* Dynamic.swift in Sources */,
 				702120A02494C4C500F7C7C3 /* VisualizeWaterIntakeViewController.swift in Sources */,
 				700BB688249553FC009EFFD3 /* VisualizeWaterIntakeViewModel.swift in Sources */,
 				B31AA19324734495007708F4 /* AppDelegate.swift in Sources */,

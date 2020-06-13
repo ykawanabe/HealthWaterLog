@@ -20,13 +20,14 @@ class AppTabBarController: UITabBarController {
     }
     
     func configureViewControllers() {
-        let trackWaterViewModel = TrackWaterViewModel(dataStore: coreDataManager.healthWaterLogDataController, userPreferenceManager: UserPreferenceManager())
+        let trackWaterViewModel = TrackWaterViewModel(dataStore: coreDataManager.healthWaterLogDataController, userPreferenceManager: UserPreferenceManager.shared)
         
         let trackWaterViewController = TrackWaterViewController(viewModel:trackWaterViewModel)
                 
         trackWaterViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
 
-        let visualizeWaterIntakeViewController = VisualizeWaterIntakeViewController()
+        let visualizeWaterIntakeViewModel = VisualizeWaterIntakeViewModel(dataStore: coreDataManager.healthWaterLogDataController, userPreferenceManager: UserPreferenceManager.shared)
+        let visualizeWaterIntakeViewController = VisualizeWaterIntakeViewController(viewModel: visualizeWaterIntakeViewModel)
 
         visualizeWaterIntakeViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 1)
 
