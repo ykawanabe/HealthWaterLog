@@ -26,3 +26,5 @@
 
 ## Reference:
 * [github/gitignore](https://github.com/github/gitignore)
+* [Core Data Best Practices](https://developer.apple.com/videos/play/wwdc2018/224/)
+* [MVVM Without Reactive Programming](https://riptutorial.com/ios/example/27354/mvvm-without-reactive-programming)
