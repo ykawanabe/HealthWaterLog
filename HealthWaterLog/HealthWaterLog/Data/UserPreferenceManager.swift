@@ -8,14 +8,30 @@
 
 import UIKit
 
+@objc
+protocol UserPreferenceManagerListener {
+    func userDefaultsDidChange(_ notification: Notification);
+}
+
 class UserPreferenceManager: NSObject {
+    static var shared = UserPreferenceManager()
+    
     private let goalKey = "goalKey"
+    private let userDefaults = UserDefaults.standard
     
     func setIntakeGoal(intakeGoal: Int) {
-        UserDefaults.standard.set(intakeGoal, forKey: goalKey)
+        userDefaults.set(intakeGoal, forKey: goalKey)
     }
     
     func intakeGoal() -> Int {
-        UserDefaults.standard.integer(forKey: goalKey)
+        userDefaults.integer(forKey: goalKey)
+    }
+    
+    func addListener<T: UserPreferenceManagerListener>(_ listener: T) {
+        NotificationCenter.default.addObserver(listener, selector: #selector(listener.userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
+    }
+    
+    func removeListner<T: UserPreferenceManagerListener>(_ listener: T) {
+        NotificationCenter.default.removeObserver(listener, name: UserDefaults.didChangeNotification, object: nil)
     }
 }
