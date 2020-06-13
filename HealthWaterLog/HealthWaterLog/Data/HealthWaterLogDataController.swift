@@ -9,6 +9,11 @@
 import UIKit
 import CoreData
 
+@objc 
+protocol HealthWaterLogDataControllerListener {
+    func managedObjectContextObjectsDidChange(notification: NSNotification);
+}
+
 class HealthWaterLogDataController: NSObject {
     var container: NSPersistentContainer!
     
@@ -94,5 +99,15 @@ class HealthWaterLogDataController: NSObject {
         } catch {
             fatalError("Failed to delete all: \(error)")
         }
+    }
+    
+    func addListener<T: HealthWaterLogDataControllerListener>(_ listener: T) {
+        let context = container.viewContext
+        NotificationCenter.default.addObserver(listener, selector: #selector(listener.managedObjectContextObjectsDidChange), name: .NSManagedObjectContextObjectsDidChange, object: context)
+    }
+    
+    func removeListner<T: HealthWaterLogDataControllerListener>(_ listener: T) {
+        let context = container.viewContext
+        NotificationCenter.default.removeObserver(listener, name: .NSManagedObjectContextObjectsDidChange, object: context)
     }
 }

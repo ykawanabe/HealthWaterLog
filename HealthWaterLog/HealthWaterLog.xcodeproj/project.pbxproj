@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700BB688249553FC009EFFD3 /* VisualizeWaterIntakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700BB687249553FC009EFFD3 /* VisualizeWaterIntakeViewModel.swift */; };
 		7021208E2494C3F400F7C7C3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702120882494C3F400F7C7C3 /* CoreDataManager.swift */; };
 		7021208F2494C3F400F7C7C3 /* HealthWaterLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 702120892494C3F400F7C7C3 /* HealthWaterLog.xcdatamodeld */; };
 		702120902494C3F400F7C7C3 /* HealthWaterLogDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7021208B2494C3F400F7C7C3 /* HealthWaterLogDataController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		700BB687249553FC009EFFD3 /* VisualizeWaterIntakeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeWaterIntakeViewModel.swift; sourceTree = "<group>"; };
 		702120882494C3F400F7C7C3 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7021208A2494C3F400F7C7C3 /* HealthWaterLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HealthWaterLog.xcdatamodel; sourceTree = "<group>"; };
 		7021208B2494C3F400F7C7C3 /* HealthWaterLogDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthWaterLogDataController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				702120982494C4C400F7C7C3 /* TrackWaterViewModel.swift */,
+				700BB687249553FC009EFFD3 /* VisualizeWaterIntakeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				7021209E2494C4C500F7C7C3 /* AppTabBarController.swift in Sources */,
 				7021209F2494C4C500F7C7C3 /* TrackWaterViewController.swift in Sources */,
 				702120A02494C4C500F7C7C3 /* VisualizeWaterIntakeViewController.swift in Sources */,
+				700BB688249553FC009EFFD3 /* VisualizeWaterIntakeViewModel.swift in Sources */,
 				B31AA19324734495007708F4 /* AppDelegate.swift in Sources */,
 				702120902494C3F400F7C7C3 /* HealthWaterLogDataController.swift in Sources */,
 				7021209D2494C4C500F7C7C3 /* TrackWaterViewModel.swift in Sources */,
