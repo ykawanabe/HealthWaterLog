@@ -46,6 +46,33 @@ class HealthWaterLogTests: XCTestCase {
         XCTAssertEqual(total, 0)
     }
     
+    func testIntakePerDay() throws {
+        let amount = 8
+        let loop = 3
+        for _ in 0..<3 {
+            let _ = dataController.createIntake(amount: Int16(amount), date: Date())
+        }
+        
+        dataController.saveContext()
+        
+        let perDay = dataController.getIntakePerDay(forDay: Date())
+
+        XCTAssertEqual(perDay.amount, Int16(amount * loop))
+    }
+    
+    func testEmptyIntakePerDay() throws {
+        let amount = 8
+        let _ = dataController.createIntake(amount: Int16(amount), date: Date(timeIntervalSince1970: 0))
+        
+        let yesterday = Calendar.current.date(byAdding: DateComponents(day: -1), to: Date())!
+        let _ = dataController.createIntake(amount: Int16(amount), date: yesterday)
+        dataController.saveContext()
+        
+        let perDay = dataController.getIntakePerDay(forDay: Date())
+
+        XCTAssertEqual(perDay.amount, 0)
+    }
+    
     func testCreateIntake() throws {
         let amount = Int16(8)
         let _ = dataController.createIntake(amount: amount, date: Date(timeIntervalSince1970: 0))

@@ -19,11 +19,14 @@ class HealthWaterLogDataController: NSObject {
     
     init(container: NSPersistentContainer, completionHandler: @escaping () -> ()) {
         self.container = container
+        super.init()
         
-        container.loadPersistentStores { (description, error) in
+        container.loadPersistentStores { [weak self] (description, error) in
             if let error = error {
                 fatalError("Core Data loading error \(error)")
             }
+            
+            self?.connectIntakePerDay()
             
             DispatchQueue.main.async {
                 completionHandler()
@@ -89,7 +92,12 @@ class HealthWaterLogDataController: NSObject {
     }
     
     func deleteAll() {
-        let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "Intake")
+        deleteAllEntity(entityName: "Intake")
+        deleteAllEntity(entityName: "IntakePerDay")
+    }
+    
+    func deleteAllEntity(entityName: String) {
+        let fr = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
 
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fr)
         
@@ -109,5 +117,49 @@ class HealthWaterLogDataController: NSObject {
     func removeListner<T: HealthWaterLogDataControllerListener>(_ listener: T) {
         let context = container.viewContext
         NotificationCenter.default.removeObserver(listener, name: .NSManagedObjectContextObjectsDidChange, object: context)
+    }
+}
+
+extension HealthWaterLogDataController {
+    @objc func contextWillSave(_ notification: Notification) {
+        guard let context = notification.object as? NSManagedObjectContext else { return }
+        
+        context.performAndWait {
+            for case let intake as Intake in context.insertedObjects {
+                let intakePerDay = getIntakePerDay(forDay: intake.timestamp!)
+                intakePerDay.amount += intake.amount
+            }
+        }
+    }
+    
+    fileprivate func connectIntakePerDay() {
+        let context = container.viewContext
+        NotificationCenter.default.addObserver(self, selector: #selector(contextWillSave), name: .NSManagedObjectContextWillSave, object: context)
+    }
+    
+    
+    func getIntakePerDay(forDay: Date) -> IntakePerDay {
+        let context = container.viewContext
+        let dateString = forDay.string
+        
+        let fetchRequest = NSFetchRequest<IntakePerDay>(entityName: "IntakePerDay")
+        fetchRequest.predicate = NSPredicate(format: "day == %@", dateString)
+        
+        do {
+            let results =  try context.fetch(fetchRequest)
+            let resultMap = results.first
+            
+            if let resultMap = resultMap {
+                return resultMap
+            } else {
+                let intakePerDay = NSEntityDescription.insertNewObject(forEntityName: "IntakePerDay", into: context) as! IntakePerDay
+
+                intakePerDay.amount = Int16(0)
+                intakePerDay.day = dateString
+                return intakePerDay
+            }
+        } catch {
+            fatalError("Failed to fetch: \(error)")
+        }
     }
 }

@@ -21,3 +21,10 @@ extension Date {
         return Calendar.current.date(byAdding: components, to: startOfDay)!
     }
 }
+
+extension Date {
+    var string: String {
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: self)
+        return "\(components.year!) - \(components.month!)-\(components.day!)"
+    }
+}

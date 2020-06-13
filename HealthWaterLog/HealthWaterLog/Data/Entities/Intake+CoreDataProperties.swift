@@ -2,7 +2,7 @@
 //  Intake+CoreDataProperties.swift
 //  HealthWaterLog
 //
-//  Created by Yusuke Kawanabe on 6/12/20.
+//  Created by Yusuke Kawanabe on 6/13/20.
 //  Copyright © 2020 Apple. All rights reserved.
 //
 //

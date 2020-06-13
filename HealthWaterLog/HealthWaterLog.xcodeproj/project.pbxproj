@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70064E402495881A00777497 /* Intake+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70064E3C2495881A00777497 /* Intake+CoreDataClass.swift */; };
+		70064E412495881A00777497 /* Intake+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70064E3D2495881A00777497 /* Intake+CoreDataProperties.swift */; };
+		70064E442495885500777497 /* IntakePerDay+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70064E422495885500777497 /* IntakePerDay+CoreDataClass.swift */; };
+		70064E452495885500777497 /* IntakePerDay+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70064E432495885500777497 /* IntakePerDay+CoreDataProperties.swift */; };
 		700BB688249553FC009EFFD3 /* VisualizeWaterIntakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700BB687249553FC009EFFD3 /* VisualizeWaterIntakeViewModel.swift */; };
 		700BB68A249562D7009EFFD3 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700BB689249562D7009EFFD3 /* Dynamic.swift */; };
 		7021208E2494C3F400F7C7C3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702120882494C3F400F7C7C3 /* CoreDataManager.swift */; };
 		7021208F2494C3F400F7C7C3 /* HealthWaterLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 702120892494C3F400F7C7C3 /* HealthWaterLog.xcdatamodeld */; };
 		702120902494C3F400F7C7C3 /* HealthWaterLogDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7021208B2494C3F400F7C7C3 /* HealthWaterLogDataController.swift */; };
-		702120912494C3F400F7C7C3 /* Intake+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7021208C2494C3F400F7C7C3 /* Intake+CoreDataClass.swift */; };
-		702120922494C3F400F7C7C3 /* Intake+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7021208D2494C3F400F7C7C3 /* Intake+CoreDataProperties.swift */; };
 		702120952494C40100F7C7C3 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702120942494C40100F7C7C3 /* DateUtils.swift */; };
 		702120962494C40700F7C7C3 /* HealthWaterLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 702120892494C3F400F7C7C3 /* HealthWaterLog.xcdatamodeld */; };
 		7021209D2494C4C500F7C7C3 /* TrackWaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702120982494C4C400F7C7C3 /* TrackWaterViewModel.swift */; };
@@ -39,13 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70064E3C2495881A00777497 /* Intake+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Intake+CoreDataClass.swift"; sourceTree = "<group>"; };
+		70064E3D2495881A00777497 /* Intake+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Intake+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		70064E422495885500777497 /* IntakePerDay+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IntakePerDay+CoreDataClass.swift"; sourceTree = "<group>"; };
+		70064E432495885500777497 /* IntakePerDay+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IntakePerDay+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		700BB687249553FC009EFFD3 /* VisualizeWaterIntakeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeWaterIntakeViewModel.swift; sourceTree = "<group>"; };
 		700BB689249562D7009EFFD3 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		702120882494C3F400F7C7C3 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7021208A2494C3F400F7C7C3 /* HealthWaterLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HealthWaterLog.xcdatamodel; sourceTree = "<group>"; };
 		7021208B2494C3F400F7C7C3 /* HealthWaterLogDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthWaterLogDataController.swift; sourceTree = "<group>"; };
-		7021208C2494C3F400F7C7C3 /* Intake+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Intake+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7021208D2494C3F400F7C7C3 /* Intake+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Intake+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		702120942494C40100F7C7C3 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		702120982494C4C400F7C7C3 /* TrackWaterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackWaterViewModel.swift; sourceTree = "<group>"; };
 		7021209A2494C4C500F7C7C3 /* AppTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
@@ -84,11 +88,10 @@
 		702120872494C3F400F7C7C3 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				70F1552224958658008CD854 /* Entities */,
 				702120882494C3F400F7C7C3 /* CoreDataManager.swift */,
 				702120892494C3F400F7C7C3 /* HealthWaterLog.xcdatamodeld */,
 				7021208B2494C3F400F7C7C3 /* HealthWaterLogDataController.swift */,
-				7021208C2494C3F400F7C7C3 /* Intake+CoreDataClass.swift */,
-				7021208D2494C3F400F7C7C3 /* Intake+CoreDataProperties.swift */,
 				702120A12494C60B00F7C7C3 /* UserPreferenceManager.swift */,
 			);
 			path = Data;
@@ -120,6 +123,17 @@
 				7021209C2494C4C500F7C7C3 /* VisualizeWaterIntakeViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		70F1552224958658008CD854 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				70064E422495885500777497 /* IntakePerDay+CoreDataClass.swift */,
+				70064E432495885500777497 /* IntakePerDay+CoreDataProperties.swift */,
+				70064E3C2495881A00777497 /* Intake+CoreDataClass.swift */,
+				70064E3D2495881A00777497 /* Intake+CoreDataProperties.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		B31AA18624734495007708F4 = {
@@ -265,11 +279,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70064E452495885500777497 /* IntakePerDay+CoreDataProperties.swift in Sources */,
+				70064E442495885500777497 /* IntakePerDay+CoreDataClass.swift in Sources */,
+				70064E412495881A00777497 /* Intake+CoreDataProperties.swift in Sources */,
 				702120952494C40100F7C7C3 /* DateUtils.swift in Sources */,
 				7021208E2494C3F400F7C7C3 /* CoreDataManager.swift in Sources */,
 				702120A22494C60B00F7C7C3 /* UserPreferenceManager.swift in Sources */,
 				7021208F2494C3F400F7C7C3 /* HealthWaterLog.xcdatamodeld in Sources */,
 				7021209E2494C4C500F7C7C3 /* AppTabBarController.swift in Sources */,
+				70064E402495881A00777497 /* Intake+CoreDataClass.swift in Sources */,
 				7021209F2494C4C500F7C7C3 /* TrackWaterViewController.swift in Sources */,
 				700BB68A249562D7009EFFD3 /* Dynamic.swift in Sources */,
 				702120A02494C4C500F7C7C3 /* VisualizeWaterIntakeViewController.swift in Sources */,
@@ -277,8 +295,6 @@
 				B31AA19324734495007708F4 /* AppDelegate.swift in Sources */,
 				702120902494C3F400F7C7C3 /* HealthWaterLogDataController.swift in Sources */,
 				7021209D2494C4C500F7C7C3 /* TrackWaterViewModel.swift in Sources */,
-				702120922494C3F400F7C7C3 /* Intake+CoreDataProperties.swift in Sources */,
-				702120912494C3F400F7C7C3 /* Intake+CoreDataClass.swift in Sources */,
 				B31AA19524734495007708F4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
