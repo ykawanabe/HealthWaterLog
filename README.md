@@ -23,3 +23,6 @@
     * For example, if we assume coffee is 98% water, logging 100 ml of coffee would result in 98 ml of water consumed. For this enhancement we can estimate that tea is 100% water, coffee is 98%, and juice is about 85%.
 * Integrate with UserNotifications to remind a user to log water intake when they haven’t met their goal.
 
+
+## Reference:
+* [github/gitignore](https://github.com/github/gitignore)
