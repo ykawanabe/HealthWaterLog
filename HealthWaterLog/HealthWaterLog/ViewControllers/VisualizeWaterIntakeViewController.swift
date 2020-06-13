@@ -16,8 +16,7 @@ class VisualizeWaterIntakeViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
         
-        setUpColor()
-        setUpConstraints()
+        setUpLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -37,6 +36,13 @@ class VisualizeWaterIntakeViewController: UIViewController {
         })
     }
 
+    private func setUpLayout() {
+        label.textAlignment = .center
+        
+        setUpColor()
+        setUpConstraints()
+    }
+    
     private func setUpColor() {
         label.textColor = UIColor.label
         self.view.backgroundColor = .systemBackground

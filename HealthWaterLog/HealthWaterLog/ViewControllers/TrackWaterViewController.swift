@@ -8,8 +8,8 @@ import UIKit
 
 class TrackWaterViewController: UIViewController {
     
-    private let addWaterButton = UIButton()
-    private let updateGoalButton = UIButton()
+    private let addWaterButton = UIButton(type: .system)
+    private let updateGoalButton = UIButton(type: .system)
     
     private var viewModel: TrackWaterViewModel!
     
@@ -34,6 +34,8 @@ class TrackWaterViewController: UIViewController {
         addWaterButton.addTarget(self, action: #selector(addWaterButtonPressed), for: .touchUpInside)
         updateGoalButton.setTitle(viewModel.updateDailyGoalLabel, for: .normal)
         updateGoalButton.addTarget(self, action: #selector(goalButtonPressed), for: .touchUpInside)
+        
+        setUpColor()
         setUpConstraints()
     }
     
@@ -45,6 +47,10 @@ class TrackWaterViewController: UIViewController {
     
     @objc private func addWaterButtonPressed() {
         viewModel.addWaterIntake()
+    }
+    
+    private func setUpColor() {
+        self.view.backgroundColor = .systemBackground
     }
     
     private func setUpConstraints() {
