@@ -9,11 +9,20 @@
 import UIKit
 
 class AppTabBarController: UITabBarController {
-
+    let coreDataManager = CoreDataManager.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let trackWaterViewController = TrackWaterViewController()
+        coreDataManager.start() { [weak self] in
+            self?.configureViewControllers()
+        }
+    }
+    
+    func configureViewControllers() {
+        let trackWaterViewModel = TrackWaterViewModel(dataStore: coreDataManager.healthWaterLogDataController)
+        
+        let trackWaterViewController = TrackWaterViewController(viewModel:trackWaterViewModel)
                 
         trackWaterViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
 
@@ -25,16 +34,4 @@ class AppTabBarController: UITabBarController {
 
         viewControllers = tabBarList
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

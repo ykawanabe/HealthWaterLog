@@ -11,14 +11,17 @@ class TrackWaterViewController: UIViewController {
     private let addWaterButton = UIButton()
     private let updateGoalButton = UIButton()
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    private var viewModel: TrackWaterViewModel!
+    
+    init(viewModel: TrackWaterViewModel) {
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
+        
         setUpButtons()
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setUpButtons()
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -27,14 +30,19 @@ class TrackWaterViewController: UIViewController {
     }
 
     private func setUpButtons() {
-        addWaterButton.setTitle("Add 8 oz Water", for: .normal)
-        updateGoalButton.setTitle("Update Daily Goal", for: .normal)
+        addWaterButton.setTitle(viewModel.addWaterLabel, for: .normal)
+        addWaterButton.addTarget(self, action: #selector(addWaterButtonPressed), for: .touchUpInside)
+        updateGoalButton.setTitle(viewModel.updateDailyGoalLabel, for: .normal)
         updateGoalButton.addTarget(self, action: #selector(goalButtonPressed), for: .touchUpInside)
         setUpConstraints()
     }
     
     @objc private func goalButtonPressed() {
-        print("Goal button pressed")
+        viewModel.addGoal()
+    }
+    
+    @objc private func addWaterButtonPressed() {
+        viewModel.addWaterIntake()
     }
     
     private func setUpConstraints() {
