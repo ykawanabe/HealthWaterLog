@@ -19,7 +19,11 @@
 I chose "In Visualize tab, show a history of water intake on a day-to-day basis." because this task is more model layer focus. It also shows how flexible Data layer is. I took denormalization approach given the history can potentially expand to huge dataset depending on the duration.
 
 ## Any other details you wish to share? 
+I used Xcode Version 11.5 for this project.
+
 It follows standard MVVM as much as it can without using FRP library. `VisualizeWaterIntakeViewModel` and `VisualizeWaterIntakeViewController` are good representation of this architecture.
+
+Some unit tests are added for the model layer to confirm the data is provided as expected. Additionally, method to generate dummy data, `saveMultipleRandomIntakesWithinAWeek` is added in `HealthWaterLogDataController` to test history feature manually.
 
 At the end, I ended up spend about 5 hours. However, there is a lot of enhancement I can make:
 
