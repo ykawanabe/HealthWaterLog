@@ -1,12 +1,9 @@
 # HealthInterviewTakeHomeProblem
+
 ## Provided (in this repository):
 * Two tabs: Track | Visualize
 * Track: Add Water Button (Bar button item), Add Goal Button
 * Visualize: Placeholder box for visualization, Text Field “X oz /X oz goal consumed”
-
-### Two Tabs:
-![image info](./Documentation/track.png)
-![image info](./Documentation/viz.png)
 
 ## Minimum Submission Required:
 * Track today’s water intake
@@ -15,16 +12,25 @@
 	* What enhancement did you pick and why?
 	* Any other details you wish to share? (Testing details + SDK)
 
-## Pick 1 Enhancement:
-* Add a water intake goal and visualize progress
-* Calculate water intake goal based on user’s weight (read from HealthKit). This goal and progress should update when user’s weight updates. 
-* In Visualize tab, show a history of water intake on a day-to-day basis. 
-* Replace water logging with the ability to log drinks that have a certain % water. Use CoreData to model these beverages and keep track of water intake per day. No need to update visualization tab. 
-    * For example, if we assume coffee is 98% water, logging 100 ml of coffee would result in 98 ml of water consumed. For this enhancement we can estimate that tea is 100% water, coffee is 98%, and juice is about 85%.
-* Integrate with UserNotifications to remind a user to log water intake when they haven’t met their goal.
+## Screenshots
+![image](./Documentation/1.gif)
 
+## What enhancement did you pick and why?
+I chose "In Visualize tab, show a history of water intake on a day-to-day basis." because this task is more model layer focus. It also shows how flexible Data layer is. I took denormalization approach given the history can potentially expand to huge dataset depending on the duration.
+
+## Any other details you wish to share? 
+It follows standard MVVM as much as it can without using FRP library. `VisualizeWaterIntakeViewModel` and `VisualizeWaterIntakeViewController` are good representation of this architecture.
+
+At the end, I ended up spend about 5 hours. However, there is a lot of enhancement I can make:
+
+* Make UI pretty.
+* Show more than 7 days in history
+* Separate `HealthWaterLogDataController` into entity base classes
+* Use async method and callback functions for fetching entitites from CoreData
+* Remove `CoreDataManager` and make the DataController a service.
+* Make listner for the data layer entity specific.
 
 ## Reference:
 * [github/gitignore](https://github.com/github/gitignore)
-* [Core Data Best Practices](https://developer.apple.com/videos/play/wwdc2018/224/)
+* [Core Data Best Practices](https://riptutorial.com/ios/example/27354/mvvm-without-reactive-programming)
 * [MVVM Without Reactive Programming](https://riptutorial.com/ios/example/27354/mvvm-without-reactive-programming)
